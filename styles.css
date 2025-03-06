@@ -1,34 +1,95 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #f0f0f0;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 }
 
 .container {
-    text-align: center;
     background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: center;
 }
 
-input, select, button {
-    margin: 10px;
-    padding: 8px;
+h1 {
+    color: #2c3e50;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.converter-row {
+    margin: 15px 0;
+}
+
+.combined-input {
+    display: flex;
+    align-items: center;
+    border: 2px solid #ecf0f1;
+    border-radius: 5px;
+    padding: 10px;
+    background: #f9f9f9;
+    width: 100%;
+    margin: 0 auto;
+    transition: border-color 0.3s;
+}
+
+.combined-input:focus-within {
+    border-color: #3498db;
+}
+
+.combined-input input {
+    border: none;
+    background: transparent;
     font-size: 16px;
+    width: 100px;
+    text-align: right;
+    padding: 0;
+    margin: 0;
+}
+
+.combined-input select {
+    border: none;
+    background: transparent;
+    font-size: 16px;
+    width: 120px;
+    padding: 0;
+    margin: 0;
+    appearance: none; /* Remove default arrow */
+    -webkit-appearance: none; /* Safari */
+    -moz-appearance: none; /* Firefox */
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="%233498db"><polygon points="0,0 12,0 6,6"/></svg>') no-repeat right 5px center;
+    background-size: 10px;
+}
+
+.combined-input .separator {
+    padding: 0 10px;
+    color: rgba(0, 0, 0, 0.3); /* Semi-transparent | */
+    font-weight: bold;
 }
 
 button {
-    background-color: #4CAF50;
+    background: linear-gradient(45deg, #3498db, #2980b9);
     color: white;
     border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
     cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 button:hover {
-    background-color: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+}
+
+button:active {
+    transform: translateY(0);
 }

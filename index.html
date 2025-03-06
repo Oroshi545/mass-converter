@@ -1,22 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mass and Weight Converter</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
 <body>
     <div class="container">
         <h1>Mass and Weight Converter</h1>
-        <input type="number" id="inputValue" placeholder="Enter value">
-        <select id="inputUnit">
-            <option value="pounds">Pounds (lb)</option>
-            <option value="kilograms">Kilograms (kg)</option>
-        </select>
-        <button onclick="convert()">Convert</button>
-        <p>Result: <span id="result"></span></p>
+        <div class="converter-row">
+            <div class="combined-input">
+                <input type="number" id="value1" placeholder="Enter value" oninput="convert()">
+                <span class="separator">|</span>
+                <select id="unit1" onchange="convert()">
+                    <option value="pounds" selected>Pounds (lb)</option>
+                    <option value="kilograms">Kilograms (kg)</option>
+                    <option value="grams">Grams (g)</option>
+                    <option value="ounces">Ounces (oz)</option>
+                    <option value="stones">Stones (st)</option>
+                    <option value="us_tons">US Tons</option>
+                    <option value="uk_tons">UK Tons</option>
+                    <option value="metric_tons">Metric Tons (t)</option>
+                </select>
+            </div>
+        </div>
+        <div class="converter-row">
+            <div class="combined-input">
+                <input type="number" id="value2" placeholder="Enter value" oninput="convert()">
+                <span class="separator">|</span>
+                <select id="unit2" onchange="convert()">
+                    <option value="pounds">Pounds (lb)</option>
+                    <option value="kilograms" selected>Kilograms (kg)</option>
+                    <option value="grams">Grams (g)</option>
+                    <option value="ounces">Ounces (oz)</option>
+                    <option value="stones">Stones (st)</option>
+                    <option value="us_tons">US Tons</option>
+                    <option value="uk_tons">UK Tons</option>
+                    <option value="metric_tons">Metric Tons (t)</option>
+                </select>
+            </div>
+        </div>
+        <button onclick="switchUnits()">↔</button>
     </div>
     <script src="script.js"></script>
 </body>
-</html>
