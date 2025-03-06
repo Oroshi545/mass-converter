@@ -1,11 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mass and Weight Converter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
 <body>
     <div class="container">
         <h1>Mass and Weight Converter</h1>
         <div class="converter-row">
-            <div class="combined-input">
-                <input type="number" id="value1" placeholder="Enter value" oninput="convert()">
+            <label for="value1" class="sr-only">Value to convert from</label>
+            <div class="combined-input" data-tooltip="Enter a value to convert from this unit">
+                <input type="number" id="value1" min="0" placeholder="Enter value" aria-describedby="unit1" oninput="convert()">
                 <span class="separator">|</span>
-                <select id="unit1" onchange="convert()">
+                <select id="unit1" aria-label="Unit to convert from" onchange="convert()">
                     <option value="pounds" selected>Pounds (lb)</option>
                     <option value="kilograms">Kilograms (kg)</option>
                     <option value="grams">Grams (g)</option>
@@ -18,10 +27,11 @@
             </div>
         </div>
         <div class="converter-row">
-            <div class="combined-input">
-                <input type="number" id="value2" placeholder="Enter value" oninput="convert()">
+            <label for="value2" class="sr-only">Value to convert to</label>
+            <div class="combined-input" data-tooltip="Result will be shown in this unit">
+                <input type="number" id="value2" min="0" placeholder="Enter value" aria-describedby="unit2" oninput="convert()">
                 <span class="separator">|</span>
-                <select id="unit2" onchange="convert()">
+                <select id="unit2" aria-label="Unit to convert to" onchange="convert()">
                     <option value="pounds">Pounds (lb)</option>
                     <option value="kilograms" selected>Kilograms (kg)</option>
                     <option value="grams">Grams (g)</option>
@@ -34,6 +44,8 @@
             </div>
         </div>
         <button onclick="switchUnits()">↔</button>
+        <button id="copyButton" onclick="copyResult()">Copy Result</button>
     </div>
     <script src="script.js"></script>
 </body>
+</html>
